@@ -9,6 +9,7 @@ monitor.setPaletteColor(colors.white, 0xeeeeee);
 monitor.write("Starting up\n")
 
 monitor.write("Found peripherals\n");
+
 for _,name in ipairs(peripheral_list) do
   local typ = peripheral.getType(name);
   monitor.write(""..name.." ("..typ..")");
