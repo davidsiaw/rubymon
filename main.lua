@@ -6,12 +6,17 @@ monitor.clear();
 monitor.setTextScale(0.5);
 monitor.setCursorPos(1,1);
 monitor.setPaletteColor(colors.white, 0xeeeeee);
-monitor.write("Starting up\n")
+monitor.write("Starting up")
 
-monitor.write("Found peripherals\n");
+local x, y = monitor.getCursorPos();
+monitor.setCursorPos(1,y+1);
+monitor.write("Found peripherals");
 
 for _,name in ipairs(peripheral_list) do
   local typ = peripheral.getType(name);
+  
+  local x, y = monitor.getCursorPos();
+  monitor.setCursorPos(1,y+1);
   monitor.write(""..name.." ("..typ..")");
 end
 
